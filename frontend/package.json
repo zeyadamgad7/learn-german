@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "nodemon",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
@@ -11,9 +12,11 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
+    "nodemon": "^3.1.10",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.11",
+    "zustand": "^5.0.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",

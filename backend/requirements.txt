@@ -1,0 +1,11 @@
+groq
+python-dotenv
+fastapi
+uvicorn[standard]
+requests
+slowapi
+redis
+bleach
+pydantic[email]
+pytest
+httpx

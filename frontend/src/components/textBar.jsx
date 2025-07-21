@@ -3,7 +3,7 @@ import useStore from './store';
 import { useState } from 'react';
 
 
-function textBar() {
+function TextBar() {
 
     const text = useStore((state) => state.text); // to get text input
     const setText = useStore((state) => state.setText); // to store text input
@@ -33,7 +33,7 @@ function textBar() {
     return (
 
         
-            <div className="w-[800px] h-[250px] bg-white rounded-xl p-6 shadow-md">
+            <div className="w-[800px] h-[250px] bg-base-200 rounded-xl p-6 shadow-md">
                 <textarea
                     value={text}
                     onChange={(e) => setText(e.target.value)}
@@ -47,7 +47,7 @@ function textBar() {
                         }}
                     
                     placeholder="Enter the sentence"
-                    className="flex-1 w-full resize-none bg-transparent border-none outline-none text-black text-sm"
+                    className="flex-1 w-full resize-none bg-transparent border-none outline-none text-base-content text-sm"
                 />
 
             </div>            
@@ -71,4 +71,4 @@ function textBar() {
     );
 }
 
-export default textBar
+export default TextBar

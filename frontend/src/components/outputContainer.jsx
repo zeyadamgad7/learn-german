@@ -9,7 +9,7 @@ const OutputContainer = () => {
 
     return (
         <>
-        <div className="w-[800px] min-h-[250px] bg-white rounded-xl p-6 shadow-md">
+        <div className="w-[800px] min-h-[250px] bg-base-200 rounded-xl p-6 shadow-md text-base-content">
 
             {enterPressed && !analysis ? (
                 <span className="loading loading-spinner loading-md"></span>

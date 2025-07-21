@@ -2,7 +2,7 @@ import React from 'react';
 
 const SideContainer = () => {
     return (
-        <div className="fixed top-1/2 right-4 transform -translate-y-1/2 w-[300px] flex flex-col items-start bg-base-200 rounded-xl shadow-lg p-4 space-y-2 text-base-content">
+        <div className="fixed top-1/2 right-4 transform -translate-y-1/2 w-[300px] flex flex-col items-start bg-base-100 rounded-xl shadow-lg p-4 space-y-2 text-neutral border border-base-200">
             <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 rounded-full bg-red-400"></div>
                 <h1 >Nominative</h1>

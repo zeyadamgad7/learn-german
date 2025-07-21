@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navbar = () => {
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar bg-base-100 shadow-md border-b border-base-200">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
@@ -18,7 +18,7 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="flex-1">
-                <a className="btn btn-ghost text-xl">Learn-German</a>
+                <a className="btn btn-ghost text-xl text-primary font-bold tracking-wide">Learn-German</a>
             </div>
             <div className="flex gap-2">
                 <div className="dropdown dropdown-end">

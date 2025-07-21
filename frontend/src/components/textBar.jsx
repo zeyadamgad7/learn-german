@@ -33,7 +33,7 @@ function TextBar() {
     return (
 
         
-            <div className="w-[800px] h-[250px] bg-base-200 rounded-xl p-6 shadow-md">
+            <div className="w-[800px] h-[250px] bg-base-100 rounded-xl p-6 shadow border border-base-200">
                 <textarea
                     value={text}
                     onChange={(e) => setText(e.target.value)}
@@ -47,7 +47,7 @@ function TextBar() {
                         }}
                     
                     placeholder="Enter the sentence"
-                    className="flex-1 w-full resize-none bg-transparent border-none outline-none text-base-content text-sm"
+                    className="flex-1 w-full resize-none bg-transparent border-none outline-none text-neutral text-lg placeholder:text-neutral/60"
                 />
 
             </div>            

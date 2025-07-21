@@ -6,6 +6,9 @@ const useStore = create((set) => ({
 
   text: '',
   setText: (newText) => set({ text: newText }),
+
+  enterPressed: false,
+  setEnterPressed: (status) => set({ enterPressed: status }),
 }));
 
 export default useStore;

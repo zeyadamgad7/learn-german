@@ -59,11 +59,9 @@ def analyze_sentence(user_input: str):
     Each word must be returned as an object with the following fields:
     - "word": the original word from the sentence
     - "part_of_speech": e.g., "Noun", "Verb", "Pronoun", "Article", "Preposition", etc.
-    - "role": grammatical role, such as "Subject", "Verb (predicate)", "Accusative object", "Dative object", "Prepositional object", etc.
+    - "role": grammatical role, such as "Subject", "Object"(consider accusative object as an object), etc.
     - "case": one of "Nominative", "Accusative", "Dative", "Genitive", or null if not applicable
-    - "person": "1st", "2nd", "3rd", or null
-    - "number": "Singular", "Plural", or null
-    - "explanation": a short explanation (1-2 sentences) of why the word has this role, case, or form
+    - "explanation": a short explanation (1-2 sentences) of on what standard was the object, subject, accusative, nominative, dativ chosen."
 
     CRITICAL REQUIREMENTS:
     - Return ONLY valid JSON in this exact format: {{"analysis": [...]}}
@@ -81,12 +79,11 @@ def analyze_sentence(user_input: str):
         "part_of_speech": "Noun",
         "role": "Subject",
         "case": "Nominative",
-        "person": null,
-        "number": "Singular",
-        "explanation": "Example explanation."
+        "explanation": "Example explanation on on what standard was the object, subject, accusative, nominative, dativ chosen. ."
         }}
     ]
     }}
+
     </TASK>
 
     <USER_INPUT>

@@ -8,13 +8,16 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postinstall": "croct --no-interaction install"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
+    "lodash": "^4.17.21",
     "nodemon": "^3.1.10",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-router-dom": "^7.7.1",
     "tailwindcss": "^4.1.11",
     "zustand": "^5.0.6"
   },

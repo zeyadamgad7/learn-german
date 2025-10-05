@@ -1,23 +1,27 @@
 import React from 'react'
-import Navbar from './components/navbar.jsx';
-import TextBar from './components/textBar.jsx';
-import OutputContainer from './components/outputContainer.jsx';
-import SideContainer from './components/sideContainer.jsx';
-import Test from './components/test.jsx';
-import Footer from './components/footer.jsx';
+import Analyze from './pages/analyze.jsx'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from './components/navbar.jsx'
+import Home from './pages/home.jsx'
+import LeftBar from './components/leftBar.jsx'
+import Footer from './components/footer.jsx'
+import Translate from './pages/translate.jsx'
+import Review from './pages/review.jsx'
 
 function App() {
   return (
     <>
       <Navbar />
-      <div className="flex items-center justify-center min-h-screen bg-base-200">
-        <div className="flex flex-col gap-6">
-          <TextBar />
-          <OutputContainer /> 
-        </div>
-      </div>
-      <SideContainer />
-      <Footer />
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/analyze' element={<Analyze />} />
+          <Route path='/translate' element={<Translate />} />
+          <Route path='/review' element={<Review />} />
+        </Routes>
+        <LeftBar />
+        <Footer />
+      </Router>
     </>
   )
 }

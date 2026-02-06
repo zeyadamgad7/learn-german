@@ -36,8 +36,7 @@ The application features a decoupled architecture with a **Python** backend for 
 * **Backend:** Python
 * **Frontend:** React.js, Vite
 * **Styling:** Tailwind CSS
-* **Package Manager:** Bun / NPM
-* **Linting:** ESLint
+* **Package Manager:** NPM
 
 ## 📂 Project Structure
 The solution follows a modern full-stack split:
@@ -96,7 +95,7 @@ zeyadamgad7-learn-german/
 ### Prerequisites
 Ensure you have the following installed:
 * [Python 3.x](https://www.python.org/downloads/)
-* [Node.js](https://nodejs.org/) or [Bun](https://bun.sh/)
+* [Node.js](https://nodejs.org/)
 * Git
 
 ### Installation Steps
@@ -111,7 +110,6 @@ Ensure you have the following installed:
     Navigate to the backend directory to install the required Python packages.
     ```bash
     cd backend/src
-    pip install -r requirements.txt
     ```
     *Ensure you are using a virtual environment if preferred.*
 
@@ -119,9 +117,8 @@ Ensure you have the following installed:
     Open a new terminal, navigate to the frontend directory, and install dependencies.
     ```bash
     cd ../frontend
-    bun install
+    npm install
     ```
-    *Alternatively, you can use `npm install` if you don't have Bun.*
 
 4.  **Configuration**
     * Create a `.env` file in the `backend/src/` directory if your application requires environment variables (e.g., API keys).
@@ -138,7 +135,7 @@ Ensure you have the following installed:
     * **Terminal 2 (Frontend):**
         ```bash
         cd frontend
-        bun run dev
+        npm run dev
         ```
 
 ## 💻 Usage

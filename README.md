@@ -1,1 +1,148 @@
-# learn-german
+# 🇩🇪 German Analyzer & Learning Tool
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+
+## 📄 Description
+**German Analyzer** is a specialized linguistic tool designed to assist learners in mastering German grammar and sentence structure. Unlike standard translators, this application deconstructs German sentences to provide deep grammatical insights, pointing out the specific case (Nominative, Accusative, Dative, Genitive) for each word and explaining the underlying grammar rules.
+
+The application features a decoupled architecture with a **Python** backend for specific natural language processing and a **React (Vite)** frontend styled with **Tailwind CSS** for a responsive, modern user experience.
+
+## ✨ Key Features
+
+### 🔍 Deep Grammatical Analysis
+* **Sentence Breakdown:**
+    * Analyzes input text word-by-word.
+    * Identifies and explains the **Grammatical Case** for nouns and pronouns.
+    * Highlights verb conjugations and sentence structure.
+* **Error Detection:**
+    * Spots failures in sentence construction.
+    * Provides feedback on grammar mistakes and suggests corrections.
+
+### 📚 Learning & Review
+* **Translation:**
+    * Provides instant translation for individual words and full sentences.
+    * Context-aware mapping of meanings.
+* **Interactive Review:**
+    * Save analyzed sentences for later study.
+    * Review past corrections to track improvement.
+
+### ⚙️ Technical Highlights
+* **Modern Frontend:** Built with **React** and **Vite** for lightning-fast performance and hot module replacement.
+* **Responsive Design:** Utilizes **Tailwind CSS** for a clean, mobile-adaptive interface.
+* **Scalable Backend:** **Python** API handles complex linguistic logic and data processing.
+* **State Management:** Efficient data handling between the input text bar, output container, and side panels.
+
+## 🛠️ Tech Stack
+* **Backend:** Python
+* **Frontend:** React.js, Vite
+* **Styling:** Tailwind CSS
+* **Package Manager:** Bun / NPM
+* **Linting:** ESLint
+
+## 📂 Project Structure
+The solution follows a modern full-stack split:
+
+```text
+zeyadamgad7-learn-german/
+├── README.md
+├── backend/
+│   ├── .gitignore
+│   └── src/
+│       ├── main.py           # Application entry point & API routes
+│       └── .env              # Environment variables
+└── frontend/
+    ├── README.md
+    ├── bun.lock
+    ├── eslint.config.js
+    ├── index.html
+    ├── package-lock.json
+    ├── package.json
+    ├── tailwind.config.js
+    ├── vite.config.js
+    ├── .gitignore
+    ├── public/
+    └── src/
+        ├── App.css
+        ├── App.jsx
+        ├── main.jsx
+        ├── assets/
+        ├── components/
+        │   ├── button.jsx
+        │   ├── checkBox.jsx
+        │   ├── dropDown.jsx
+        │   ├── footer.jsx
+        │   ├── leftBar.jsx
+        │   ├── navbar.jsx
+        │   ├── outputContainer.jsx
+        │   ├── sideContainer.jsx
+        │   ├── store.js
+        │   ├── test.jsx
+        │   └── textBar.jsx
+        ├── functions/
+        │   └── handleSubmit.js
+        ├── images/
+        └── pages/
+            ├── analyze.jsx
+            ├── home.jsx
+            ├── logout.jsx
+            ├── review.jsx
+            ├── signin.jsx
+            ├── signup.jsx
+            └── translate.jsx
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+Ensure you have the following installed:
+* [Python 3.x](https://www.python.org/downloads/)
+* [Node.js](https://nodejs.org/) or [Bun](https://bun.sh/)
+* Git
+
+### Installation Steps
+
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/yourusername/zeyadamgad7-learn-german.git](https://github.com/yourusername/zeyadamgad7-learn-german.git)
+    cd zeyadamgad7-learn-german
+    ```
+
+2.  **Backend Setup**
+    Navigate to the backend directory to install the required Python packages.
+    ```bash
+    cd backend/src
+    pip install -r requirements.txt
+    ```
+    *Ensure you are using a virtual environment if preferred.*
+
+3.  **Frontend Setup**
+    Open a new terminal, navigate to the frontend directory, and install dependencies.
+    ```bash
+    cd ../frontend
+    bun install
+    ```
+    *Alternatively, you can use `npm install` if you don't have Bun.*
+
+4.  **Configuration**
+    * Create a `.env` file in the `backend/src/` directory if your application requires environment variables (e.g., API keys).
+
+5.  **Run the Application**
+    You need to run the backend and frontend in separate terminals.
+
+    * **Terminal 1 (Backend):**
+        ```bash
+        cd backend/src
+        python main.py
+        ```
+
+    * **Terminal 2 (Frontend):**
+        ```bash
+        cd frontend
+        bun run dev
+        ```
+
+## 💻 Usage
+1.  Navigate to `http://localhost:5173` in your browser.
+2.  **Sign Up/In:** Create an account or log in to access the dashboard.
+3.  **Analyze:** Navigate to the "Analyze" page, enter a German sentence, and click "Submit" to view the case breakdown and translation.
+4.  **Review:** Check the "Review" page to see your saved history and past corrections.

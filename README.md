@@ -106,30 +106,33 @@ Ensure you have the following installed:
     cd zeyadamgad7-learn-german
     ```
 
-2.  **Backend Setup**
-    Navigate to the backend directory to install the required Python packages.
-    ```bash
-    cd backend/src
+2. **Run the automated setup script**
+   This project includes a shell script that automatically creates a Python virtual environment, installs backend dependencies, and installs frontend node modules.
+   For Mac/Linux:
+   ```bash
+   chmod +x setup.sh
+   ./setup.sh
     ```
-    *Ensure you are using a virtual environment if preferred.*
+   For Windows:
+   Open Git Bash in the project folder and run the exact same commands as above.
 
-3.  **Frontend Setup**
-    Open a new terminal, navigate to the frontend directory, and install dependencies.
-    ```bash
-    cd ../frontend
-    npm install
-    ```
-
-4.  **Configuration**
+3.  **Configuration**
     * Create a `.env` file in the `backend/src/` directory if your application requires environment variables (e.g., API keys).
 
-5.  **Run the Application**
+4.  **Run the Application**
     You need to run the backend and frontend in separate terminals.
 
     * **Terminal 1 (Backend):**
         ```bash
-        cd backend/src
-        python main.py
+        # 1. Navigate to the backend folder
+         cd backend
+         
+         # 2. Activate the virtual environment (Mac/Linux)
+         source venv/bin/activate
+         # (On Windows Git Bash use: source venv/Scripts/activate)
+         
+         # 3. Start the Python server
+         python src/main.py
         ```
 
     * **Terminal 2 (Frontend):**

@@ -44,50 +44,19 @@ The solution follows a modern full-stack split:
 ```text
 zeyadamgad7-learn-german/
 ├── README.md
+├── setup.sh               # Automated project initialization script
 ├── backend/
+│   ├── requirements.txt
 │   ├── .gitignore
 │   └── src/
-│       ├── main.py           # Application entry point & API routes
-│       └── .env              # Environment variables
+│       ├── main.py          # Application entry point & API routes
+│       └── .env             # Environment variables
 └── frontend/
-    ├── README.md
-    ├── bun.lock
-    ├── eslint.config.js
-    ├── index.html
-    ├── package-lock.json
     ├── package.json
     ├── tailwind.config.js
     ├── vite.config.js
-    ├── .gitignore
-    ├── public/
     └── src/
-        ├── App.css
-        ├── App.jsx
-        ├── main.jsx
-        ├── assets/
-        ├── components/
-        │   ├── button.jsx
-        │   ├── checkBox.jsx
-        │   ├── dropDown.jsx
-        │   ├── footer.jsx
-        │   ├── leftBar.jsx
-        │   ├── navbar.jsx
-        │   ├── outputContainer.jsx
-        │   ├── sideContainer.jsx
-        │   ├── store.js
-        │   ├── test.jsx
-        │   └── textBar.jsx
-        ├── functions/
-        │   └── handleSubmit.js
-        ├── images/
-        └── pages/
-            ├── analyze.jsx
-            ├── home.jsx
-            ├── logout.jsx
-            ├── review.jsx
-            ├── signin.jsx
-            ├── signup.jsx
-            └── translate.jsx
+        └── App.jsx          # UI Components
 ```
 
 ## 🚀 Getting Started

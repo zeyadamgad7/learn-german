@@ -114,7 +114,7 @@ Ensure you have the following installed:
    chmod +x setup.sh
    ./setup.sh
    ```
-   *For Windows:*
+   *For Windows:*  
    Open Git Bash in the project folder and run the exact same commands as above.
 4.  **Configuration**
     * Create a `.env` file in the `backend/src/` directory if your application requires environment variables (e.g., API keys).

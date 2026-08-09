@@ -111,7 +111,7 @@ Ensure you have the following installed:
         ```
 
 ## 💻 Usage
-1.  Navigate to `http://localhost:5173` in your browser.
-2.  **Sign Up/In:** Create an account or log in to access the dashboard.
-3.  **Analyze:** Navigate to the "Analyze" page, enter a German sentence, and click "Submit" to view the case breakdown and translation.
-4.  **Review:** Check the "Review" page to see your saved history and past corrections.
+1.  **Launch:** Access the application by navigating to `http://localhost:5173` in your preferred web browser.
+2.  **Analyze:** Proceed to the "Analyze" page, input a German sentence, and click "Submit" to generate a detailed grammatical case breakdown alongside its direct translation.
+3.  **Translate:** Utilize the translation module to accurately convert individual German vocabulary or complete sentences into your target language.
+4.  **Review:** Consult the "Review" section to examine comprehensive corrections of your submitted texts, detailing both orthographic (spelling) and grammatical improvements.

@@ -9,7 +9,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "postinstall": "croct --no-interaction install"
+    "postinstall": "npx croct --no-interaction install"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",

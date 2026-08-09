@@ -6,7 +6,7 @@ import SideContainer from '../components/sideContainer.jsx';
 import Test from '../components/test.jsx';
 import Footer from '../components/footer.jsx';
 import LeftBar from '../components/leftBar.jsx'
-import useStore from '../components/store.js';
+import useStore from '../store/store.js';
 import { useEffect } from 'react';
 
 function analyze() {

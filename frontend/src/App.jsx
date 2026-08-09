@@ -11,8 +11,8 @@ import Review from './pages/review.jsx'
 function App() {
   return (
     <>
-      <Navbar />
       <Router>
+      <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/analyze' element={<Analyze />} />

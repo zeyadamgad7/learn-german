@@ -2,7 +2,7 @@ import React from 'react'
 import DropDown from '../components/dropDown'
 import TextBar from '../components/textBar'
 import OutputContainer from '../components/outputContainer'
-import useStore from '../components/store'
+import useStore from '../store/store'
 import { useEffect } from 'react'
 
 function translate() {

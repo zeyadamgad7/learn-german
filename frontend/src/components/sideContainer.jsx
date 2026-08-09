@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import CheckBox from './checkBox';
-import useStore from './store';
+import useStore from '../store/store';
 
 const SideContainer = () => {
 

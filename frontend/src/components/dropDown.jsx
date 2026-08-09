@@ -1,6 +1,6 @@
 import React, { use, useState } from 'react'
-import useStore from '../components/store'
-import { handleSubmit } from '../functions/handleSubmit';
+import useStore from '../store/store'
+import { submitGermanText } from '../services/api';
 
 function dropDown({ setLanguage, label, setLabel}) {
 
@@ -21,7 +21,7 @@ function dropDown({ setLanguage, label, setLabel}) {
         setLanguage(language)
         setLabel(language)
         setsearchInput('')
-        handleSubmit({action, text, original_text, source_language, target_language: language, setAnalysis, setTranslation})
+        submitGermanText({action, text, original_text, source_language, target_language: language, setAnalysis, setTranslation})
     }
 
     const search = (

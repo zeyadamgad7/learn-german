@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import useStore from './store'
+import useStore from '../store/store';
 import { set } from 'lodash';
 
 function leftBar() {
@@ -36,7 +36,7 @@ function leftBar() {
                 className="flex items-center space-x-2 w-full cursor-pointer"
                 onClick={handleClickHome}
                 >
-                <img src="./src/images/home5.svg" className="w-6 h-6" />
+                <img src="./src/assets/images/home5.svg" className="w-6 h-6" />
                 <span className="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">Home</span>
             </button>
 
@@ -46,7 +46,7 @@ function leftBar() {
                 className="flex items-center space-x-2 w-full  cursor-pointer"
                 onClick={handleClickTranslate}
             >
-                <img src="./src/images/translate_icon.svg" className="w-6 h-6" />
+                <img src="./src/assets/images/translate_icon.svg" className="w-6 h-6" />
                 <span className="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">Translate</span>
             </button>
 
@@ -56,7 +56,7 @@ function leftBar() {
                 className="flex items-center space-x-2 w-full  cursor-pointer"
                 onClick={handleCLickAnalyze}
             >
-                <img src="./src/images/analyze.svg" className="w-6 h-6" />
+                <img src="./src/assets/images/analyze.svg" className="w-6 h-6" />
                 <span className="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">Analyze</span>
             </button>
 
@@ -66,7 +66,7 @@ function leftBar() {
                 className="flex items-center space-x-2 w-full  cursor-pointer"
                 onClick={handleCLickReview}
             >
-                <img src="./src/images/review.svg" className="w-6 h-6" />
+                <img src="./src/assets/images/review.svg" className="w-6 h-6" />
                 <span className="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">Review</span>
             </button>
 

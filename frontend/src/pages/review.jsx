@@ -2,7 +2,7 @@ import React, { act } from 'react'
 import TextBar from '../components/textBar'
 import OutputContainer from '../components/outputContainer'
 import SideContainer from '../components/sideContainer'
-import useStore from '../components/store'
+import useStore from '../store/store'
 import { useEffect } from 'react'
 
 function review() {

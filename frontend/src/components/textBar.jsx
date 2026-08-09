@@ -1,7 +1,7 @@
 import React from 'react'
-import useStore from './store';
+import useStore from '../store/store';
 import { useState } from 'react';
-import { handleSubmit } from '../functions/handleSubmit';
+import { submitGermanText } from '../services/api';
 import { debounce, set } from 'lodash';
 import { useCallback } from 'react';
 
@@ -41,74 +41,67 @@ function TextBar({ className = "" }) {
     const setCorrectedWords = useStore((state) => state.setCorrectedWords);
     const setReviewExplanation = useStore((state) => state.setReviewExplanation);
 
-    // const handleSubmit = async () => {
-    //     console.log(action)
-    //     try {
-    //         const endpoint = action === 'Analyze' ? '/analyze' : action === 'Translate' ? '/translate' : ''
-
-    //         const body = action === 'Analyze'
-    //             ? { text }
-    //             : action === 'Translate'
-    //                 ? {
-    //                     original_text: original_text,
-    //                     source_language: source_language,
-    //                     target_language: target_language,
-    //                 }
-    //                 : (() => { throw new Error("Unknown action type") })();
-
-    //         const response = await fetch(`http://localhost:8000${endpoint}`, {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             },
-    //             body: JSON.stringify(body),
-    //         });
-    //         if (!response.ok) throw new Error('Request failed');
-
-    //         const data = await response.json();
-    //         if (endpoint === '/analyze') {
-    //             setAnalysis(data); // store the result
-    //         }
-    //         else if (endpoint === '/translate') {
-    //             setTranslation(data);
-    //         }
-
-
-    //     } catch (err) {
-    //         console.error('Error:', err);
-    //     }
-    // };
-
-    const debouncedSubmit = useCallback(
-        debounce(async (value) => {
-            setLoading(true);
-            setOriginalText(value);
-            const data = await handleSubmit({
+    
+    const executeAction = async (currentInputValue) => {
+        setLoading(true);
+        try {
+            const data = await submitGermanText({
                 action,
-                text,
-                original_text: value,
+                text: action === 'Analyze' ? currentInputValue : text,
+                original_text: action === 'Translate' ? currentInputValue : original_text,
                 source_language,
                 target_language,
-                setAnalysis,
-                setTranslation,
-                setSourceLanguage,
-                setTargetLanguage
+                reviewText: action === 'Review' ? currentInputValue : reviewText,
             });
+            if (!data) return;
 
-            if (data && data.translation[0].source_language !== '') {
+            console.log("Received data:", data);
+
+            if (action === 'Analyze') {
+                setAnalysis(data); // store the result
+            }
+            else if (action === 'Translate') {
+                setTranslation(data);
+                if (data && data.translation[0].source_language !== '') {
                 const updatedSourceLang = data.translation[0].source_language;
                 const updatedTargetLang = data.translation[0].target_language;
 
                 setSourceLabel(updatedSourceLang);
                 setTargetLabel(updatedTargetLang);
-            }else{
-                setSourceLabel('Source Language');
-                setTargetLabel('Target Language');
-                setTranslation('');
+                }else{
+                    setSourceLabel('Source Language');
+                    setTargetLabel('Target Language');
+                    setTranslation('');
+                }
             }
+            else if (action === 'Review') {
+                // // console.log("Wrong words- ", data.review[0].wrong_words)
+                // setWrongWords(data.review[0].wrong_words);
+
+                // // console.log("corrected words- ", data.review[0].corrected_words)
+                // setCorrectedWords(data.review[0].corrected_words);
+                
+                // // console.log("corrected text- ", data.review[0].corrected_text)
+                // setCorrection(data.review[0].corrected_text);
+                
+                // // console.log(data.review[0].explanation)
+                // setReviewExplanation(data.review[0].explanation);
+
+                setCorrection(data);
+            }
+        } catch (error) {
+            console.error("Action execution failed:", error);
+        }
+        finally {
             setLoading(false);
+        }
+    }
+
+    const debouncedSubmit = useCallback(
+        debounce(async (value) => {
+            await executeAction(value);
         }, 500),
-        [action, text, source_language, target_language, setAnalysis, setTranslation, setSourceLanguage, setTargetLanguage]
+        [action, source_language, target_language]
     );
 
 
@@ -125,7 +118,7 @@ function TextBar({ className = "" }) {
                         if (e.key === 'Enter') {
                             setEnterPressed(true);
                             e.preventDefault();
-                            handleSubmit({ action, text, original_text, source_language, target_language, setAnalysis, setTranslation });
+                            executeAction(text);
                             setText('');
                         }
                     }}
@@ -154,7 +147,7 @@ function TextBar({ className = "" }) {
                         if (e.key === 'Enter') {
                             setEnterPressed(true);
                             e.preventDefault();
-                            handleSubmit({ action, text, original_text, source_language, target_language, setAnalysis, setTranslation, reviewText, setCorrection, setWrongWords, setCorrectedWords, setReviewExplanation });
+                            executeAction(reviewText);
                             // setReviewText('');
                         }
                     }}

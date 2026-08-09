@@ -1,5 +1,5 @@
 import React from 'react';
-import useStore from './store';
+import useStore from '../store/store';
 import translate from '../pages/translate';
 
 const OutputContainer = ({ className = "" }) => {

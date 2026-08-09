@@ -108,18 +108,18 @@ Ensure you have the following installed:
 
 2. **Run the automated setup script**
    This project includes a shell script that automatically creates a Python virtual environment, installs backend dependencies, and installs frontend node modules.
-   For Mac/Linux:
+   
+   *For Mac/Linux:*
    ```bash
    chmod +x setup.sh
    ./setup.sh
-    ```
-   For Windows:
+   ```
+   *For Windows:*
    Open Git Bash in the project folder and run the exact same commands as above.
-
-3.  **Configuration**
+4.  **Configuration**
     * Create a `.env` file in the `backend/src/` directory if your application requires environment variables (e.g., API keys).
 
-4.  **Run the Application**
+5.  **Run the Application**
     You need to run the backend and frontend in separate terminals.
 
     * **Terminal 1 (Backend):**
